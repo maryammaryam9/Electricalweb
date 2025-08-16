@@ -1,0 +1,74 @@
+<nav class="bg-gray-800 text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img
+          src="../../../assets/energy (1).png"
+          class="w-10 h-10 rounded-full object-cover"
+          alt="Logo"
+        />
+        <span class="ml-3 font-bold text-xl">Electrical</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <ng-container *ngFor="let item of menuItems">
+          <a
+            [routerLink]="['/' + item.route]"
+            routerLinkActive="text-yellow-400 border-yellow-400"
+            class="pb-1 border-b-2 border-transparent hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300"
+            [class.text-yellow-400]="activeMenu === item.key"
+            [class.border-yellow-400]="activeMenu === item.key"
+            (click)="setActiveMenu(item.key)"
+          >
+            {{ item.label }}
+          </a>
+        </ng-container>
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <div class="block md:hidden">
+        <button (click)="toggleMenu()" class="focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              *ngIf="!isMenuOpen"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            <path
+              *ngIf="isMenuOpen"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div *ngIf="isMenuOpen" class="md:hidden pt-3 pb-4 flex flex-col space-y-2">
+      <ng-container *ngFor="let item of menuItems">
+        <a
+          [routerLink]="['/' + item.route]"
+          routerLinkActive="text-yellow-400 border-yellow-400"
+          class="pb-1 border-b-2 border-transparent hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300"
+          [class.text-yellow-400]="activeMenu === item.key"
+          [class.border-yellow-400]="activeMenu === item.key"
+          (click)="handleMobileNavClick(item.key)"
+        >
+          {{ item.label }}
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</nav>

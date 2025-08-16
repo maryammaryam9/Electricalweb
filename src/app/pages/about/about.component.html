@@ -1,0 +1,145 @@
+<!-- 🔹 About Us Section -->
+<section class="w-full">
+  <!-- 🔹 Banner Image -->
+  <div class="relative w-full h-64 md:h-96">
+    <img
+      src="assets/aboutus.png"
+      alt="Electricians Banner"
+      class="w-full h-full object-cover"
+    />
+    <div
+      class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center px-4"
+    >
+      <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold">
+        ⚡ About <span class="text-yellow-400">Us</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- 🔹 About Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- 🔹 Introduction -->
+    <div class="text-center mb-10 sm:mb-14 px-4">
+      <h2
+        class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight inline-flex flex-wrap justify-center items-center gap-2"
+      >
+        ⚡
+        <span class="text-gray-800">Who</span>
+        <span class="relative inline-block">
+          <span
+            class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
+          >
+            We Are
+          </span>
+          <span
+            class="absolute left-0 -bottom-1 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"
+          ></span>
+        </span>
+      </h2>
+      <p
+        class="text-gray-600 mt-3 sm:mt-4 max-w-xl text-sm sm:text-base md:text-lg mx-auto"
+      >
+        We are a team of certified electricians providing high-quality,
+        affordable, and safe electrical solutions for homes and businesses
+        across Harrow and surrounding areas.
+      </p>
+    </div>
+
+    <!-- 🔹 Image + Text Side-by-Side -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+      <!-- Left Side: Image -->
+      <div>
+        <img
+          src="assets/aboutus.jpg"
+          alt="Our Team"
+          class="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+
+      <!-- Right Side: Text -->
+      <div>
+        <h3 class="text-2xl font-semibold text-yellow-600 mb-4">
+          Trusted Electrical Experts
+        </h3>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          With over a decade of hands-on experience, we provide top-tier
+          electrical solutions for both residential and commercial properties.
+          From new construction wiring and panel upgrades to lighting
+          installations and energy-efficient solutions, our certified
+          electricians ensure every job is completed to the highest standard.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          We pride ourselves on delivering professional workmanship, transparent
+          pricing, and unmatched customer service. Every project, big or small,
+          receives our full attention and care—because we understand the
+          importance of safe and reliable electrical systems in your daily life
+          and business operations.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          We stay current with modern tech, safety codes, and eco-friendly
+          practices to deliver smart, sustainable solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Our Team Section -->
+  <section class="bg-gray-800 w-full py-16 mb-5">
+    <div class="text-center px-4 mb-16 sm:mb-20">
+      <h2
+        class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight inline-flex flex-wrap justify-center items-center gap-2 text-white"
+      >
+        ⚡
+        <span>Our</span>
+        <span class="relative inline-block">
+          <span
+            class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
+          >
+            Team
+          </span>
+          <span
+            class="absolute left-0 -bottom-1 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"
+          ></span>
+        </span>
+      </h2>
+      <p
+        class="text-gray-300 mt-3 sm:mt-4 max-w-xl mx-auto text-sm sm:text-base md:text-lg"
+      >
+        Meet the skilled professionals who power our success.
+      </p>
+    </div>
+
+    <!-- 🔹 Team Members Grid -->
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-10">
+        <div
+          *ngFor="let member of teamMembers"
+          class="bg-gray-700 text-center shadow-lg px-6 pt-6 pb-6 rounded-xl hover:shadow-2xl transition duration-300"
+        >
+          <!-- 🔸 Profile Image inside card with margin-top -->
+          <div class="flex justify-center mt-[-3.5rem] mb-2">
+            <img
+              [src]="member.image"
+              (error)="member.image = 'assets/placeholder.jpg'"
+              [alt]="member.name"
+              class="w-28 h-28 rounded-full border-4 border-white shadow-lg object-cover bg-white"
+            />
+          </div>
+
+          <!-- 🔸 Quote & Description -->
+          <p class="text-gray-200 text-sm mt-4 italic">
+            <span class="text-yellow-400 text-lg">❝</span>
+            {{ member.desc }}
+            <span class="text-yellow-400 text-lg">❞</span>
+          </p>
+
+          <!-- 🔸 Name & Role -->
+          <h3 class="mt-6 text-lg font-semibold text-yellow-300">
+            {{ member.name }}
+          </h3>
+          <p class="text-gray-300 text-sm font-medium">{{ member.role }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

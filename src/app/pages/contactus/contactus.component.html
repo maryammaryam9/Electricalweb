@@ -1,0 +1,93 @@
+<div class="min-h-screen bg-gray-100 py-10 px-4 md:px-20">
+  <div class="text-center mb-14 px-4">
+    <h2
+      class="text-3xl sm:text-4xl font-extrabold tracking-tight inline-flex items-center gap-2 text-gray-900 dark:text-white flex-wrap justify-center"
+    >
+      ⚡
+      <span class="text-gray-800 dark:text-white">Contact</span>
+      <span class="relative inline-block">
+        <span
+          class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
+        >
+          Us
+        </span>
+        <span
+          class="absolute left-0 -bottom-1 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"
+        ></span>
+      </span>
+    </h2>
+
+    <p
+      class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto text-base sm:text-lg"
+    >
+      We’d love to hear from you. Fill out the form below.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Contact Form -->
+    <form class="bg-white p-8 rounded-2xl shadow-md space-y-6">
+      <div>
+        <label class="block text-gray-700 font-medium cursor-pointer" for="name"
+          >Name</label
+        >
+        <input
+          id="name"
+          type="text"
+          placeholder="Your name"
+          class="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-800"
+        />
+      </div>
+      <div>
+        <label
+          class="block text-gray-700 font-medium cursor-pointer"
+          for="email"
+          >Email</label
+        >
+        <input
+          id="email"
+          type="email"
+          placeholder="Your email"
+          class="cursor-pointer w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-800"
+        />
+      </div>
+      <div>
+        <label
+          for="message"
+          class="block text-gray-700 font-medium cursor-pointer"
+          >Message</label
+        >
+        <textarea
+          rows="5"
+          id="message"
+          placeholder="Your message"
+          class="w-full cursor-pointer mt-2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-800"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="w-full flex justify-center items-center bg-[#231c14] text-white font-semibold py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-yellow-400 hover:text-black"
+      >
+        Send Message
+      </button>
+    </form>
+
+    <!-- Google Map -->
+    <div class="rounded-2xl overflow-hidden shadow-md">
+      <iframe
+        class="w-full h-full min-h-[400px]"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9939.93865261296!2d-0.1276!3d51.5074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3337306b41%3A0x86edc2cb3b0e6c1c!2sLondon%2C%20UK!5e0!3m2!1sen!2suk!4v1722000000000!5m2!1sen!2suk"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <!-- <google-map height="400px" width="100%" [center]="center" [zoom]="zoom">
+        <map-marker [position]="center" [label]="'📍'"></map-marker>
+      </google-map> -->
+    </div>
+  </div>
+</div>
