@@ -4,11 +4,21 @@
   >
     <!-- Logo and Intro -->
     <div>
-      <img
+      <!-- <img
         src="../../../assets/energy (1).png"
         class="w-10 h-10 rounded-full object-cover mb-3"
         alt="Logo"
-      />
+      /> -->
+
+      <div class="flex items-center space-x-4">
+        <img
+          [routerLink]="['/']"
+          src="../../../assets/electricalLogo.png"
+          class="rounded-full object-cover shadow-md w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-13 lg:h-13 mb-3"
+          alt="Logo"
+          style="cursor: pointer"
+        />
+      </div>
       <p class="text-sm text-gray-400">
         Professional, affordable electrical services in Harrow and surrounding
         areas. Available 24/7.

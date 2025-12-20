@@ -1,14 +1,15 @@
-<nav class="bg-gray-800 text-white">
+<nav class="bg-gray-800 text-white "   style="position: fixed; z-index: 8888; width: 100%;">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="flex justify-between items-center h-16">
+    <div class="flex justify-between items-center h-20">
       <!-- Logo -->
-      <div class="flex items-center">
+      <div class="flex items-center space-x-4">
         <img
-          src="../../../assets/energy (1).png"
-          class="w-10 h-10 rounded-full object-cover"
+          [routerLink]="['/']"
+          src="../../../assets/electricalLogo.png"
+          class="rounded-full object-cover shadow-md w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-13 lg:h-13"
           alt="Logo"
+          style="cursor: pointer;"
         />
-        <span class="ml-3 font-bold text-xl">Electrical</span>
       </div>
 
       <!-- Desktop Menu -->
@@ -72,3 +73,5 @@
     </div>
   </div>
 </nav>
+<!-- Page Content Spacing -->
+<div class="pt-10 sm:pt-24 md:pt-28 lg:pt-20"></div>
