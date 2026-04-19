@@ -1,30 +1,41 @@
-<div
-  class="relative w-full h-[75vh] sm:h-[85vh] md:h-[89vh] max-[575px]:h-[60vh] overflow-hidden"
->
+<div class="relative w-full h-[75vh] sm:h-[85vh] md:h-[89vh] max-[575px]:h-[40vh] overflow-hidden bg-black">
+  
+  <!-- Video Layer -->
   <video
     autoplay
-    muted="muted"
+    muted
     loop
-    playsinline="playsinline"
+    playsinline
     preload="auto"
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 w-full h-full object-cover opacity-60 animate-subtle-zoom"
   >
     <source src="assets/bannervideo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <div
-    class="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white px-4 text-center"
-  >
-    <h1
-      class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4"
-    >
-      Domestic & Commercial Electricians
+  <!-- Content Overlay -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full bg-black/40 text-white px-4 text-center">
+    
+    <!-- Decorative Line -->
+    <!-- <div class="h-1 w-16 bg-cyan-500 mb-6 rounded-full animate-grow-line"></div> -->
+
+    <!-- Main Heading -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 tracking-tight leading-tight uppercase animate-slide-up">
+      Domestic & <span          class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent" >Commercial</span> <br class="hidden md:block"> Electricians
     </h1>
-    <p
-      class="text-sm sm:text-base md:text-lg lg:text-2xl max-w-sm sm:max-w-md md:max-w-xl"
-    >
+
+              
+
+
+    <!-- Sub-paragraph -->
+    <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-sm sm:max-w-md md:max-w-2xl font-medium text-gray-200 tracking-wide opacity-0 animate-fade-in">
       Expert solutions for residential and industrial electrical needs.
     </p>
+
+    <!-- Call to Action Button -->
+   <button class="mt-10 px-10 py-3 bg-transparent border-2 border-yellow-500 text-yellow-500 font-bold uppercase tracking-[0.2em] hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-600 hover:text-white hover:border-transparent transition-all duration-500 opacity-0 animate-fade-in-delayed shadow-[0_0_15px_rgba(234,179,8,0.2)] hover:shadow-[0_0_25px_rgba(234,179,8,0.5)]">
+  Get Started
+</button>
   </div>
+
 </div>

@@ -1,1 +1,167 @@
-<p>detailcardpage works!</p>
+<div *ngIf="serviceData">
+  <!-- Hero Section -->
+  <div class="relative h-[400px] flex items-center justify-center">
+    <!-- Back Button: Circular with your Custom Yellow/Gradient Theme -->
+    <button  
+      (click)="goBack()"
+      class="absolute top-20 left-4 md:left-10 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-yellow-500 bg-transparent text-yellow-500 transition-all duration-500 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-600 hover:text-white hover:border-transparent shadow-[0_0_15px_rgba(234,179,8,0.2)] hover:shadow-[0_0_25px_rgba(234,179,8,0.5)] flex items-center justify-center group active:scale-95"
+    >
+      <!-- Left Arrow Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+        class="w-6 h-6 group-hover:-translate-x-1 transition-transform"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+        />
+      </svg>
+    </button>
+
+    <!-- Image Section -->
+    <img
+      [src]="serviceData?.imageSrc"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="Hero Image"
+    />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Title -->
+    <h1
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      class="relative z-10 text-4xl md:text-5xl font-bold text-white text-center px-4"
+    >
+      {{ serviceData?.title }}
+    </h1>
+  </div>
+  <div
+    class="max-w-5xl mx-auto p-6 md:p-12 bg-white -mt-20 relative z-20 rounded-t-3xl shadow-2xl"
+  >
+    <!-- Description -->
+    <p
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      class="text-xl text-gray-700 leading-relaxed italic border-b pb-8 mb-10"
+    >
+      {{ serviceData.description }}
+    </p>
+
+    <div
+      *ngIf="serviceData.title == 'EV Charger Installation'"
+      class="space-y-8 mb-16"
+    >
+      <!-- Section 1: Combined Box (Why Install & Cost Estimator) -->
+      <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm">
+        <!-- Heading From Index 0 -->
+        <h2
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          class="text-2xl font-bold text-[#231c14] mb-4"
+        >
+          {{ serviceData.sections[0].heading }}
+        </h2>
+        <p
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          class="text-gray-600 mb-8"
+        >
+          Installing a dedicated home charger is the safest and most efficient
+          way to power your electric vehicle.
+        </p>
+
+        <div class="border-t pt-8">
+          <!-- Heading From Index 1 -->
+          <h2
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            class="text-2xl font-bold text-[#231c14] mb-4"
+          >
+            {{ serviceData.sections[1].heading }}
+          </h2>
+          <button
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            class="mt-2 bg-yellow-500 hover:bg-[#231c14] hover:text-white text-black px-6 py-3 rounded-lg font-bold transition-all w-full md:w-max"
+          >
+            {{ serviceData.sections[1].subtext }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Section 2: Key Considerations (Full Width Index 2) -->
+      <div class="bg-[#231c14] p-8 rounded-xl text-white shadow-lg w-full">
+        <h2
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          class="text-2xl font-bold text-yellow-500 mb-6 tracking-wide"
+        >
+          {{ serviceData.sections[2].heading }}
+        </h2>
+
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <li
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            *ngFor="let point of serviceData.sections[2].points"
+            class="flex items-start bg-white/10 p-4 rounded-lg"
+          >
+            <span class="text-yellow-500 mr-3 font-bold">✓</span>
+            <span class="text-gray-100 font-medium">{{ point }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div *ngIf="serviceData.title == 'EV Charger Installation'" class="mt-10">
+      <h2
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        class="text-3xl font-bold text-center mb-10 text-gray-900"
+      >
+        Frequently Asked Questions
+      </h2>
+
+      <div class="space-y-4">
+        <div
+          *ngFor="let faq of serviceData.faqs"
+          class="border rounded-lg shadow-sm bg-white overflow-hidden transition-all hover:shadow-md"
+        >
+          <button
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            (click)="faq.isOpen = !faq.isOpen"
+            class="w-full flex justify-between items-center p-5 text-left font-bold text-gray-800 hover:bg-gray-50"
+          >
+            <span class="pr-4">{{ faq.q }}</span>
+            <span
+              class="text-yellow-500 transform transition-transform duration-300"
+              [class.rotate-180]="faq.isOpen"
+            >
+              ▼
+            </span>
+          </button>
+
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            *ngIf="faq.isOpen"
+            class="p-5 bg-gray-50 border-t text-gray-600 leading-relaxed animate-fade-in"
+          >
+            <p class="whitespace-normal break-words">
+              {{ faq.a }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

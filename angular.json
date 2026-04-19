@@ -31,7 +31,8 @@
             ],
             "styles": [
               "src/styles.scss",
-                "node_modules/swiper/swiper-bundle.min.css"
+                "node_modules/swiper/swiper-bundle.min.css",
+                "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
           },

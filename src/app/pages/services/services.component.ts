@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
-
+import * as AOS from 'aos'; 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
+
+  ngOnInit() {
+    // AOS ko initialize karein
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+    
+    // Scroll refresh ke liye (Optionally)
+    window.addEventListener('load', AOS.refresh);
+  }
+  
   // 👷 Technician Section
   technicianSection = {
     heading: 'Our Electrical Technicians',

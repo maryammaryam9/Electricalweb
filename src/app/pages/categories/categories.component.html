@@ -2,7 +2,9 @@
   <div class="max-w-7xl mx-auto">
     <!-- Section Heading -->
     <div class="text-center mb-10 px-4">
-      <h2
+      <h2 data-aos="fade-up"
+      data-aos-duration="1500"
+     data-aos-anchor-placement="top-bottom"
         class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight inline-flex flex-wrap justify-center items-center gap-2"
       >
         ⚡
@@ -20,7 +22,9 @@
         </span>
       </h2>
 
-      <p
+      <p data-aos="fade-up"
+      data-aos-duration="1500"
+     data-aos-anchor-placement="top-bottom"
         class="text-gray-600 mt-4 max-w-xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
       >
         We offer a wide range of professional electrical services to meet all
@@ -30,8 +34,9 @@
 
     <!-- Services Grid -->
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div data-aos="zoom-in" 
+  data-aos-duration="1500"
         *ngFor="let service of services"
         class="bg-white rounded-2xl shadow-md overflow-hidden"
       >
@@ -59,12 +64,13 @@
           <div class="w-1.5 bg-yellow-400 rounded"></div>
 
           <div class="pl-4">
-          <p class="text-sm text-gray-700 line-clamp-3">
-  {{ service.description }}
-</p>
-
+            <p class="text-sm text-gray-700 line-clamp-3">
+              {{ service.description }}
+            </p>
 
             <button
+              [routerLink]="['/detailPage', service.title]"
+              [state]="service"
               class="mt-6 bg-[#231c14] text-white px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 hover:text-black transition"
             >
               Read More

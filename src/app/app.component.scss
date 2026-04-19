@@ -1,0 +1,9 @@
+/* Har element jis par ID hai, uske upar 100px ka "invisible" gap bana dega */
+[id] {
+  scroll-margin-top: 100px !important;
+}
+
+/* Smooth scrolling ke liye */
+html {
+  scroll-behavior: smooth;
+}

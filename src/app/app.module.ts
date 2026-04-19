@@ -16,6 +16,7 @@ import { OperatingAreasComponent } from './pages/operating-areas/operating-areas
 import { DetailcardpageComponent } from './pages/detailcardpage/detailcardpage.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { HerosectionComponent } from './pages/herosection/herosection.component';
+import { TopbarComponent } from './layout/topbar/topbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HerosectionComponent } from './pages/herosection/herosection.component'
     OperatingAreasComponent,
     DetailcardpageComponent,
     CategoriesComponent,
-    HerosectionComponent
+    HerosectionComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,

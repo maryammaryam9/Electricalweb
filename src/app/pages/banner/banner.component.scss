@@ -1,2 +1,50 @@
-// @import 'swiper/swiper-bundle.min.css';
-@import 'swiper/swiper.min.css';
+/* 1. Video ka halka sa zoom effect (Premium feel) */
+@keyframes subtleZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.animate-subtle-zoom {
+  animation: subtleZoom 20s infinite alternate ease-in-out;
+}
+
+/* 2. Top Line growth */
+@keyframes growLine {
+  from { width: 0; opacity: 0; }
+  to { width: 4rem; opacity: 1; }
+}
+
+.animate-grow-line {
+  animation: growLine 0.8s ease-out forwards;
+}
+
+/* 3. Heading Reveal (Slide Up) */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* 4. Paragraph Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-out 0.4s forwards;
+}
+
+/* 5. Button Fade In with more delay */
+.animate-fade-in-delayed {
+  animation: fadeIn 1.2s ease-out 0.8s forwards;
+}
+
+/* Hover Effect for Button */
+button:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  transform: translateY(-2px);
+}
