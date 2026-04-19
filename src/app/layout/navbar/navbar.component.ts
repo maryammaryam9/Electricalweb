@@ -16,7 +16,7 @@ export class NavbarComponent {
     { key: 'category', label: 'Categories', route: 'categories' },
     { key: 'charges', label: 'Our Charges', route: 'ourcharges' },
     { key: 'areas', label: 'Operating Areas', route: 'operating-areas' },
-    { key: 'aboutUs', label: 'About Us', route: 'aboutus' },
+    // { key: 'aboutUs', label: 'About Us', route: 'aboutus' },
     { key: 'contact', label: 'Contact', route: 'contact' },
   ];
 
